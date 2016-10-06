@@ -6,6 +6,6 @@ programm a SumoBoy robot with specially created custom blocks.
 
 Project consists of two main projects:
 
-~ ArduBlock tool for arduino IDE which allows Programming 
-Arduino like boars using Blocks.
-~ ArduinoSumoBoy library for arduino which siplifys arduino code.
+- Modified ArduBlock tool for arduino IDE which allows Programming 
+Arduino like boards using Blocks.
+- ArduinoSumoBoy library for arduino which siplifies arduino code.
