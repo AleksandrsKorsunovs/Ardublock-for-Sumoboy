@@ -731,7 +731,7 @@ public class RenderableBlock extends JComponent implements SearchableElement,
 			maxImgHt += img.getImageIcon().getIconHeight();
 		}
 		// FIXME need better calculation for the image height.
-		return maxImgHt + 10;
+		return maxImgHt + 1;
 	}
 
 	/**
@@ -746,7 +746,7 @@ public class RenderableBlock extends JComponent implements SearchableElement,
 		}
 		// FIXME quick hack to avoid image blocking plug labels. Need to figure
 		// out the z-order of image drawing.
-		return (maxImgWt > 0) ? (maxImgWt + 100) : maxImgWt;
+		return (maxImgWt > 0) ? (maxImgWt + 20) : maxImgWt;
 	}
 
 	// ////////////////////////////////////////////

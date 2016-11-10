@@ -10466,48 +10466,72 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
                 
                 <BlockGenus name="sb-switch-name-1" kind="data" color="26 97 218" 
                            initlabel="bg.sb-switch-name-1" editable-label="no">
+                        <description>
+				<text>switch 1</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-switch-name-2" kind="data" color="26 97 218" 
                            initlabel="bg.sb-switch-name-2" editable-label="no">
+                        <description>
+				<text>switch 2</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-switch-name-3" kind="data" color="26 97 218" 
                            initlabel="bg.sb-switch-name-3" editable-label="no">
+                        <description>
+				<text>switch 3</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
-                <BlockGenus name="sb-switch-name-4" kind="data" color="26 97 218" 
-                           initlabel="bg.sb-switch-name-4" editable-label="no">
+                <BlockGenus name="sb-switch-name-0" kind="data" color="26 97 218" 
+                           initlabel="bg.sb-switch-name-0" editable-label="no">
+                        <description>
+				<text>switch 0</text>
+			</description>  
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-led-type-a" kind="data" color="26 97 218" 
                            initlabel="bg.sb-led-type-a" editable-label="no">
+                        <description>
+				<text>led a</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-led-type-1" kind="data" color="26 97 218" 
                            initlabel="bg.sb-led-type-1" editable-label="no">
+                        <description>
+				<text>led 1</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-led-type-2" kind="data" color="26 97 218" 
                            initlabel="bg.sb-led-type-2" editable-label="no">
+                        <description>
+				<text>led 2</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-led-type-3" kind="data" color="26 97 218" 
                            initlabel="bg.sb-led-type-3" editable-label="no">
+                        <description>
+				<text>led 3</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
@@ -10515,48 +10539,74 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
                 
                 <BlockGenus name="sb-line-sensor-type-left" kind="data" color="26 97 218" 
                            initlabel="bg.sb-line-sensor-type-left" editable-label="no">
+                        <description>
+				<text>left</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-line-sensor-type-right" kind="data" color="26 97 218" 
                            initlabel="bg.sb-line-sensor-type-right" editable-label="no">
+                    <description>
+				<text>right</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-line-sensor-type-back" kind="data" color="26 97 218" 
                            initlabel="bg.sb-line-sensor-type-back" editable-label="no">
+                    <description>
+				<text>back</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
+                
                 <BlockGenus name="sb-sharp-type-left-left" kind="data" color="26 97 218" 
                            initlabel="bg.sb-sharp-type-left-left" editable-label="no">
-			<BlockConnectors>
+                        <description>
+				<text>on left side</text>
+			</description>
+                        <BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
+                
                 <BlockGenus name="sb-sharp-type-front-left" kind="data" color="26 97 218" 
                            initlabel="bg.sb-sharp-type-front-left" editable-label="no">
+                    <description>
+				<text>front left</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-sharp-type-front-front" kind="data" color="26 97 218" 
                            initlabel="bg.sb-sharp-type-front-front" editable-label="no">
+                    <description>
+				<text>front</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-sharp-type-front-right" kind="data" color="26 97 218" 
                            initlabel="bg.sb-sharp-type-front-right" editable-label="no">
+                    <description>
+				<text>front right</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-sharp-type-right-right" kind="data" color="26 97 218" 
                            initlabel="bg.sb-sharp-type-right-right" editable-label="no">
+                    <description>
+				<text>on right side</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
@@ -10564,45 +10614,138 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
                 
                <BlockGenus name="sb-motor-type-left" kind="data" color="26 97 218" 
                            initlabel="bg.sb-motor-type-left" editable-label="no">
+                   <description>
+				<text>left</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-motor-type-right" kind="data" color="26 97 218" 
                             initlabel="bg.sb-motor-type-right" editable-label="no">
+                    <description>
+				<text>right</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-motor-type-both" kind="data" color="26 97 218" 
                             initlabel="bg.sb-motor-type-both" editable-label="no">
+                    <description>
+				<text>both</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-motor-direction-forward" kind="data" color="26 97 218" 
                             initlabel="bg.sb-motor-direction_forward" editable-label="no">
+                    <description>
+				<text>forward</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug"  />
 			</BlockConnectors>
 		</BlockGenus>
                 <BlockGenus name="sb-motor-direction-back" kind="data" color="26 97 218" 
                             initlabel="bg.sb-motor-direction-back" editable-label="no">
+                    <description>
+				<text>back</text>
+			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="plug" />
 			</BlockConnectors>
 		</BlockGenus>
-                <BlockGenus name="sb-motor-direction-back" kind="data" color="26 97 218" 
-                            initlabel="bg.sb-motor-direction-back" editable-label="no">
+                <BlockGenus name="sb-drive-forward" kind="command" color="10 57 89" 
+                            initlabel="bg.sb-drive-forward" editable-label="no">
+                       <description>
+				<text>drive forward</text>
+                                <arg-description n="1">0-255</arg-description>
+				<arg-description n="2">0-255</arg-description>
+			</description>
 			<BlockConnectors>
-				<BlockConnector connector-type="number" connector-kind="plug" />
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-left">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+                                <BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-right">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-                              
-                <BlockGenus name="sb-motor-set" kind="command" color="20 150 30"
+                <BlockGenus name="sb-drive-left" kind="command" color="10 57 89" 
+                            initlabel="bg.sb-drive-left" editable-label="no">
+                        <description>
+				<text>drive left</text>
+                                <arg-description n="1">0-255</arg-description>
+				<arg-description n="2">0-255</arg-description>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-left">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+                                <BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-right">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-drive-right" kind="command" color="10 57 89" 
+                            initlabel="bg.sb-drive-right" editable-label="no">
+                        <description>
+				<text>drive right</text>
+                                <arg-description n="1">0-255</arg-description>
+				<arg-description n="2">0-255</arg-description>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-left">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+                                <BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-right">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-drive-back" kind="command" color="10 57 89" 
+                            initlabel="bg.sb-drive-back" editable-label="no">
+                        <description>
+				<text>drive back</text>
+                                <arg-description n="1">0-255</arg-description>
+				<arg-description n="2">0-255</arg-description>
+			</description>
+			<BlockConnectors>
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-left">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+                                <BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-drive-set-right">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                
+                <BlockGenus name="sb-motor-set" kind="command" color="10 57 89"
 			initlabel="bg.sb-motor-set" editable-label="no">
 			<description>
-				<text>drive motor&#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+				<text>set motor</text>
+                                <arg-description n="1">
+                                    0 - left
+                                    1 - right
+                                    2 - both
+                                </arg-description>
+				<arg-description n="2">
+                                    0 - forward
+                                    1 - back
+                                </arg-description>
+                                <arg-description n="3">
+                                    0 - 255
+                                </arg-description>
 			</description>
 			<BlockConnectors>                                
 				<BlockConnector connector-type="number"
@@ -10618,12 +10761,93 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 					<DefaultArg genus-name="number" label="100" />
 				</BlockConnector>
 			</BlockConnectors>	
+		</BlockGenus>              
+                <BlockGenus name="sb-motor-set-txt" kind="command" color="10 57 89"
+			initlabel="bg.sb-motor-set-txt" editable-label="no">
+			<description>
+				<text>set motor</text>
+                                <arg-description n="1">
+                                    0 - left
+                                    1 - right
+                                    2 - both
+                                </arg-description>
+				<arg-description n="2">
+                                    0 - forward
+                                    1 - back
+                                </arg-description>
+                                <arg-description n="3">
+                                    0 - 255
+                                </arg-description>
+			</description>
+			<BlockConnectors>                                
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-motor-set-type">
+					<DefaultArg genus-name="sb-motor-type-left" label="left" />
+				</BlockConnector>
+                                <BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-motor-set-direction">
+					<DefaultArg genus-name="sb-motor-direction-forward" label="forward" />
+				</BlockConnector>
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-motor-set-speed">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+			</BlockConnectors>
+                        <Images>
+				<Image>
+					<FileLocation>com/ardublock/block/sumoboy/motor_example_simple.png</FileLocation>
+				</Image>
+			</Images>	
+		</BlockGenus>
+                <BlockGenus name="sb-motor-set-notxt" kind="command" color="10 57 89"
+			initlabel="bg.sb-motor-set-notxt" editable-label="no">
+			<description>
+				<text>set motor</text>
+                                <arg-description n="1">
+                                    0 - left
+                                    1 - right
+                                    2 - both
+                                </arg-description>
+				<arg-description n="2">
+                                    0 - forward
+                                    1 - back
+                                </arg-description>
+                                <arg-description n="3">
+                                    0 - 255
+                                </arg-description>
+			</description>
+			<BlockConnectors>                                
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-motor-set-type">
+					<DefaultArg genus-name="sb-motor-type-left" label="left" />
+				</BlockConnector>
+                                <BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-motor-set-direction">
+					<DefaultArg genus-name="sb-motor-direction-forward" label="forward" />
+				</BlockConnector>
+				<BlockConnector connector-type="number"
+					connector-kind="socket" label="bc.sb-motor-set-speed">
+					<DefaultArg genus-name="number" label="100" />
+				</BlockConnector>
+			</BlockConnectors>
+                        <Images>
+				<Image>
+					<FileLocation>com/ardublock/block/sumoboy/motor_example_text.png</FileLocation>
+				</Image>
+			</Images>	
 		</BlockGenus>
                 
-               <BlockGenus name="sb-sharp-read" kind="data" color="20 150 30" 
+               <BlockGenus name="sb-sharp-read" kind="data" color="10 57 89" 
                            initlabel="bg.sb-sharp-read" editable-label="no">			
 			<description>
-				<text>Read sharp proximity sensor value &#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+				<text> read sharp </text>
+                                <arg-description n="1">
+                                    0 - left
+                                    1 - front-left
+                                    2 - front
+                                    3 - front-right
+                                    4 - right
+                                </arg-description>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number"
@@ -10634,10 +10858,15 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-line-sensor-read-analog" kind="data" color="20 150 30" 
+                <BlockGenus name="sb-line-sensor-read-analog" kind="data" color="10 57 89" 
                            initlabel="bg.sb-line-sensor-read-analog" editable-label="no">			
 			<description>
-				<text>Read  analog line sensor value&#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+				<text>read line analog</text>
+                                <arg-description n="1">
+                                    0 - left
+                                    1 - right
+                                    2 - back
+                                </arg-description>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number"
@@ -10648,10 +10877,18 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-line-sensor-read-boolean" kind="data" color="20 150 30" 
+                <BlockGenus name="sb-line-sensor-read-boolean" kind="data" color="10 57 89" 
                            initlabel="bg.sb-line-sensor-read-boolean" editable-label="no">			
 			<description>
-				<text>Read  bool line sensor value&#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+				<text>read line bool</text>
+                                <arg-description n="1">
+                                    0 - 1023, default 50.
+                                </arg-description>
+                                <arg-description n="2">
+                                    0 - left
+                                    1 - right
+                                    2 - back
+                                </arg-description>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number"
@@ -10666,10 +10903,20 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-led-set" kind="command" color="20 150 30"
+                <BlockGenus name="sb-led-set" kind="command" color="10 57 89"
 			initlabel="bg.sb-led-set" editable-label="no">
 			<description>
-				<text>Turn Led &#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+				<text>Set led</text>
+                                <arg-description n="1">
+                                    0 - LedA
+                                    1 - Led1
+                                    2 - Led2
+                                    3 - Led3
+                                </arg-description>
+                                <arg-description n="2">
+                                    LOW -off
+                                    HIGH - on
+                                </arg-description>
 			</description>
 			<BlockConnectors>                                
 				<BlockConnector connector-type="number"
@@ -10682,19 +10929,25 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				</BlockConnector>
 			</BlockConnectors>	
 		</BlockGenus>
-                <BlockGenus name="sb-button-read" kind="data" color="20 150 30" 
+                <BlockGenus name="sb-button-read" kind="data" color="10 57 89" 
                            initlabel="bg.sb-button-read" editable-label="no">			
 			<description>
-				<text>Read  bool line sensor value&#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+				<text>read button</text>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="boolean" connector-kind="plug"></BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-repeat-millis" kind="command" color="255 221 0" initlabel="bg.sb-repeat-millis">
+                <BlockGenus name="sb-repeat-millis" kind="command" color="227 31 38" initlabel="bg.sb-repeat-millis">
 			<description>
-				<text>repeat every N milis</text>
+				<text>repeat every millis</text>
+                                <arg-description n="1">
+                                    0 - 4294967296 milliseconds
+                                </arg-description>
+                                <arg-description n="2">
+                                    Comand list
+                                </arg-description>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.sb-repeat-millis-time">
@@ -10704,10 +10957,25 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-switch-read" kind="data" color="20 150 30" 
-                           initlabel="bg.sb-switch-read" editable-label="no">			
+                <BlockGenus name="sb-ir-loop" kind="command" color="10 57 89" initlabel="bg.sb-ir-loop">
 			<description>
-				<text>Read DIP switch value &#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+                            <text>ir loop</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector label="bc.commands" connector-type="cmd" connector-kind="socket" />
+			</BlockConnectors>
+		</BlockGenus>
+                
+                    <BlockGenus name="sb-switch-read-one" kind="data" color="10 57 89" 
+                           initlabel="bg.sb-switch-read-one" editable-label="no">			
+			<description>
+				<text>read switch</text>
+                                <arg-description n="1">
+                                    0 - switch № 0
+                                    1 - switch № 1
+                                    2 - switch № 2
+                                    3 - switch № 3                                    
+                                </arg-description>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number"
@@ -10718,19 +10986,28 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-switch-read-all" kind="data" color="20 150 30" 
+                <BlockGenus name="sb-switch-read-all" kind="data" color="10 57 89" 
                            initlabel="bg.sb-switch-read-all" editable-label="no">			
 			<description>
-				<text>Read DIP switch value &#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+                            <text>read all switches</text>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number" connector-kind="plug"></BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-switch-block" kind="command" color="255 221 0" initlabel="bg.sb-switch-block">
+                <BlockGenus name="sb-switch-block" kind="command" color="227 31 38" initlabel="bg.sb-switch-block">
 			<description>
-				<text>Switch</text>
+                            <text>Switch functionality </text>
+                            <arg-description n="1">
+                                Integer variable
+                            </arg-description>
+                            <arg-description n="2">
+                                Case block
+                            </arg-description>
+                            <arg-description n="3">
+                                Comand list
+                            </arg-description>
 			</description>
 			<BlockConnectors>
 				<BlockConnector connector-type="number" connector-kind="socket" label="bc.sb-switch-argument"/>
@@ -10739,10 +11016,16 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-case-block" kind="data" color="20 150 30" 
+                <BlockGenus name="sb-case-block" kind="data" color="227 31 38" 
                            initlabel="bg.sb-case-block" editable-label="no">			
 			<description>
-				<text>Case</text>
+                            <text>case block</text>
+                            <arg-description n="1">
+                               Constant integer value
+                            </arg-description>
+                            <arg-description n="2">
+                                Comand list
+                            </arg-description>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number" connector-kind="socket" label="bc.sb-case-value">
@@ -10753,10 +11036,13 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			</BlockConnectors>
 		</BlockGenus>
                 
-                <BlockGenus name="sb-line-sensors-value" kind="data" color="20 150 30" 
+                <BlockGenus name="sb-line-sensors-value" kind="data" color="10 57 89" 
                            initlabel="bg.sb-line-sensors-value" editable-label="no">			
 			<description>
-				<text>Read  all line sensor dec value &#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+                            <text> Bool line sensor</text>
+                            <arg-description n="1">
+                                0-1023
+                            </arg-description>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number"
@@ -10766,22 +11052,22 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
                             <BlockConnector connector-type="number" connector-kind="plug"></BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-                <BlockGenus name="sb-sharp-read-all" kind="data" color="20 150 30" 
+                <BlockGenus name="sb-sharp-read-all" kind="data" color="10 57 89" 
                            initlabel="bg.sb-sharp-read-all" editable-label="no">			
 			<description>
-				<text>Read all sharp values &#x000A;&#x000D;SumoBoy&#x000A;&#x000D;</text>
+                            <text>Sum of all sharps</text>
 			</description>
 			<BlockConnectors>
                             <BlockConnector connector-type="number" connector-kind="plug"></BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-                <BlockGenus name="sb-test" kind="procedure" color="20 150 30" 
-                           initlabel="bg.sb-test" editable-label="no">			
+                <BlockGenus name="sb-sharp-read-front" kind="data" color="10 57 89" 
+                           initlabel="bg.sb-sharp-read-front" editable-label="no">			
 			<description>
-				<text>test;</text>
+                            <text>Sum of front sharps</text>
 			</description>
 			<BlockConnectors>
-                            <BlockConnector connector-type="cmd" connector-kind="socket"></BlockConnector>
+                            <BlockConnector connector-type="number" connector-kind="plug"></BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
                                        
@@ -10789,10 +11075,16 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 
 	<BlockFamilies>
                 <BlockFamily>
+			<FamilyMember>sb-drive-forward</FamilyMember>
+                        <FamilyMember>sb-drive-left</FamilyMember>
+                        <FamilyMember>sb-drive-right</FamilyMember>
+                        <FamilyMember>sb-drive-back</FamilyMember>
+		</BlockFamily>
+                <BlockFamily>
                         <FamilyMember>sb-switch-name-1</FamilyMember>
                         <FamilyMember>sb-switch-name-2</FamilyMember>
                         <FamilyMember>sb-switch-name-3</FamilyMember>
-                        <FamilyMember>sb-switch-name-4</FamilyMember>
+                        <FamilyMember>sb-switch-name-0</FamilyMember>
                 </BlockFamily>
                 <BlockFamily>
                         <FamilyMember>sb-led-type-a</FamilyMember>
@@ -10804,6 +11096,10 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
                         <FamilyMember>sb-line-sensor-type-right</FamilyMember>
                         <FamilyMember>sb-line-sensor-type-back</FamilyMember>
                         <FamilyMember>sb-line-sensor-type-left</FamilyMember>
+                </BlockFamily>
+                <BlockFamily>
+                        <FamilyMember>sb-sharp-read-front</FamilyMember>
+                        <FamilyMember>sb-sharp-read-all</FamilyMember>
                 </BlockFamily>
                 <BlockFamily>
 			<FamilyMember>sb-sharp-type-left-left</FamilyMember>
@@ -11471,6 +11767,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>number-single-I2C-address</BlockGenusMember>
 				<BlockGenusMember>number-single-fixed-parallel</BlockGenusMember>
 			</BlockDrawer>
+                        <!--
 			<BlockDrawer button-color="255 255 255" name="bd.communication" type="factory">
 				<BlockGenusMember>serial_available</BlockGenusMember>
 				<BlockGenusMember>serial_available2</BlockGenusMember>
@@ -11499,8 +11796,10 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>Serialplus_send_variable_digital</BlockGenusMember>
 				<BlockGenusMember>Serialplus_receive_number</BlockGenusMember>
 				<BlockGenusMember>Serialplus_receive_digital</BlockGenusMember>
-			</BlockDrawer>
-			<!--<BlockDrawer button-color="26 97 218" name="bd.scoop">
+			</BlockDrawer>  -->
+                        
+                        <!-- 
+			<BlockDrawer button-color="26 97 218" name="bd.scoop">
 			    <BlockGenusMember>scoop_task</BlockGenusMember>
 				<BlockGenusMember>scoop_loop</BlockGenusMember>
 				<BlockGenusMember>scoop_sleep</BlockGenusMember>
@@ -11757,7 +12056,8 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			<BlockGenusMember>Esplora_File_Available</BlockGenusMember>
 			<BlockGenusMember>Esplora_File_Read</BlockGenusMember>
 			<BlockGenusMember>Esplora_File_Close</BlockGenusMember>
-			</BlockDrawer>
+			</BlockDrawer>-->
+                        <!--
 			<BlockDrawer button-color="216 5 10" name="bd.adafruit" type="factory">
 				<BlockGenusMember>ada_dc_motor_fwd</BlockGenusMember>
 				<BlockGenusMember>ada_dc_motor_bwd</BlockGenusMember>
@@ -11857,7 +12157,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 			    <BlockGenusMember>little_bits_synthspeaker</BlockGenusMember>
 			</BlockDrawer>
 			
-			
+
 			<BlockDrawer button-color="20 150 30" name="bd.ke-keenlon">
 				<BlockGenusMember>ke-motor-run</BlockGenusMember>
 				<BlockGenusMember>ke-motor-setmoto</BlockGenusMember>	
@@ -11885,8 +12185,8 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>ke-tempe</BlockGenusMember>	
 				<BlockGenusMember>ke-psd</BlockGenusMember>								
 				<BlockGenusMember>ke-servo</BlockGenusMember>																		
-			</BlockDrawer> 	
-
+			</BlockDrawer> 	-->
+<!--
 			<BlockDrawer button-color="152 29 155" name="bd.jerusalab" type="factory">
 				<BlockGenusMember>midi_command</BlockGenusMember>
 			</BlockDrawer>
@@ -11923,21 +12223,28 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>xcj_ms_digital_write</BlockGenusMember>
 			</BlockDrawer>-->
                         
-                        <BlockDrawer button-color="20 150 30" name="bd.sb-sumo-boy">
+                        <BlockDrawer button-color="10 57 89" name="bd.sb-sumo-boy">
                                 <BlockGenusMember>sb-sharp-read</BlockGenusMember>
                                 <BlockGenusMember>sb-sharp-read-all</BlockGenusMember>
+                                <BlockGenusMember>sb-sharp-read-front</BlockGenusMember>
+                                <BlockGenusMember>sb-drive-forward</BlockGenusMember>
+                                <BlockGenusMember>sb-drive-left</BlockGenusMember>
+                                <BlockGenusMember>sb-drive-right</BlockGenusMember>
+                                <BlockGenusMember>sb-drive-back</BlockGenusMember>
                                 <BlockGenusMember>sb-motor-set</BlockGenusMember>
+                                <BlockGenusMember>sb-motor-set-notxt</BlockGenusMember>
+                                <BlockGenusMember>sb-motor-set-txt</BlockGenusMember>
                                 <BlockGenusMember>sb-line-sensor-read-analog</BlockGenusMember>
                                 <BlockGenusMember>sb-line-sensor-read-boolean</BlockGenusMember>
                                 <BlockGenusMember>sb-led-set</BlockGenusMember>
                                 <BlockGenusMember>sb-button-read</BlockGenusMember>
                                 <BlockGenusMember>sb-repeat-millis</BlockGenusMember>
                                 <BlockGenusMember>sb-switch-read-all</BlockGenusMember>
-                                <BlockGenusMember>sb-switch-read</BlockGenusMember>
+                                <BlockGenusMember>sb-switch-read-one</BlockGenusMember>
                                 <BlockGenusMember>sb-switch-block</BlockGenusMember>
                                 <BlockGenusMember>sb-case-block</BlockGenusMember>
+                                <BlockGenusMember>sb-ir-loop</BlockGenusMember>
                                 <BlockGenusMember>sb-line-sensors-value</BlockGenusMember>
-                                <BlockGenusMember>sb-test</BlockGenusMember>
                         </BlockDrawer>        
 
 
@@ -11948,7 +12255,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 
 	<Pages drawer-with-page="no">
 		<Page page-name="Main" page-width="600" page-color="100 100 100"/>
-                <Page page-name="second" page-width="600" page-color="128 128 0"/>
+                <Page page-name="second" page-width="600" page-color="50 50 50"/>
 	</Pages>
 
 	<TrashCan>

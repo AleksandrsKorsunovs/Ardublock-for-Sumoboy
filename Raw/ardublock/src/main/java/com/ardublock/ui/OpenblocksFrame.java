@@ -35,6 +35,13 @@ import com.ardublock.ui.listener.SaveButtonListener;
 
 import edu.mit.blocks.controller.WorkspaceController;
 import edu.mit.blocks.workspace.Workspace;
+import edu.mit.blocks.codeblockutil.CSlider;
+import edu.mit.blocks.workspace.ZoomSlider;
+import java.awt.Color;
+import java.awt.Font;
+import java.awt.GridLayout;
+import java.awt.Toolkit;
+import javax.swing.JComponent;
 
 
 public class OpenblocksFrame extends JFrame
@@ -68,6 +75,9 @@ public class OpenblocksFrame extends JFrame
 	
 	public OpenblocksFrame()
 	{
+                //Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
+                //double width = screenSize.getWidth();
+                //double height = screenSize.getHeight();
 		context = Context.getContext();
 		this.setTitle(makeFrameTitle());
 		this.setSize(new Dimension(1024, 760));
@@ -102,6 +112,9 @@ public class OpenblocksFrame extends JFrame
 		
 		JPanel buttons = new JPanel();
 		buttons.setLayout(new FlowLayout());
+                JPanel upContainer = new JPanel();
+                upContainer.setLayout(new FlowLayout());
+                
 		JButton newButton = new JButton(uiMessageBundle.getString("ardublock.ui.new"));
 		newButton.addActionListener(new NewButtonListener(this));
 		JButton saveButton = new JButton(uiMessageBundle.getString("ardublock.ui.save"));
@@ -144,7 +157,6 @@ public class OpenblocksFrame extends JFrame
 				}
 			}
 		});
-
 		buttons.add(newButton);
 		buttons.add(saveButton);
 		buttons.add(saveAsButton);
@@ -174,8 +186,13 @@ public class OpenblocksFrame extends JFrame
 		bottomPanel.add(websiteButton);
 		bottomPanel.add(versionLabel);
 
-		
-		this.add(buttons, BorderLayout.NORTH);
+                
+                JComponent zslider = new ZoomSlider(workspace);
+                
+		upContainer.add(buttons );
+                upContainer.add(zslider);
+                
+                this.add(upContainer, BorderLayout.NORTH);
 		this.add(bottomPanel, BorderLayout.SOUTH);
 		this.add(workspace, BorderLayout.CENTER);
 	}
