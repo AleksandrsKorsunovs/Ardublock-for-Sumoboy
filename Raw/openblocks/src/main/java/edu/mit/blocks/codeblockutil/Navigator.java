@@ -235,6 +235,24 @@ final public class Navigator {
         scroll.repaint();
         scroll.getHorizontalScrollBar().setValue(explorers.get(position).getJComponent().getX());
     }
+    
+    public void resizeView(double multiplier)
+    {
+        int accumWidth = 0;
+        int height = (int) (scroll.getHeight());
+        int width = (int) (scroll.getWidth());
+        for (Explorer explorer : explorers) {
+            explorer.resizeView(multiplier);
+            explorer.getJComponent().setBounds(accumWidth, 0, width, height);
+            explorer.reformView();
+            accumWidth += width;
+        }
+        view.setPreferredSize(new Dimension(accumWidth, height));
+        view.setBounds(0, 0, accumWidth, height);
+        scroll.revalidate();
+        scroll.repaint();
+        scroll.getHorizontalScrollBar().setValue(explorers.get(position).getJComponent().getX());
+    }
 
     /**
      * Reassigns the canvases to the explorer with the specified name.  If

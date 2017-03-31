@@ -27,6 +27,7 @@ class FactoryCanvas extends JPanel implements Canvas, SearchableContainer, RBPar
 
     private static final long serialVersionUID = 328149080291L;
     private static final int BORDER_WIDTH = 10;
+    private double zoom = 1;
     /** The highlight of this canvas */
     private Color highlight = null;
     /** The color of this canvas */
@@ -123,7 +124,7 @@ class FactoryCanvas extends JPanel implements Canvas, SearchableContainer, RBPar
         block.removeComponentListener(this);
     }
 
-    void layoutBlocks() {
+    void layoutBlocks(double zoom) {
         RenderableBlock rb;
         int maxWidth = 20;
         int tx = BORDER_WIDTH;
@@ -131,6 +132,7 @@ class FactoryCanvas extends JPanel implements Canvas, SearchableContainer, RBPar
         for (Component c : this.getComponents()) {
             if (c instanceof RenderableBlock) {
                 rb = (RenderableBlock) c;
+                rb.setZoomLevel(zoom);
                 rb.setBounds(tx, ty, rb.getBlockWidth(), rb.getBlockHeight());
                 ty = ty + BORDER_WIDTH + rb.getBlockHeight();
                 rb.repaint();
@@ -151,11 +153,14 @@ class FactoryCanvas extends JPanel implements Canvas, SearchableContainer, RBPar
     public void addToHighlightLayer(Component c) {
         this.add(c, BLOCK_HIGHLIGHT_LAYER);
     }
-
+    
     public void componentResized(ComponentEvent e) {
-        this.layoutBlocks();
+        this.layoutBlocks(zoom);
     }
-
+    public void resizeZ(double z)
+    {
+        this.zoom = z;
+    }
     public void componentHidden(ComponentEvent e) {
     }
 

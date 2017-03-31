@@ -108,6 +108,8 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
     private List<FactoryCanvas> subsetCanvases;
     /** The workspace in use */
     private final Workspace workspace;
+    
+    private double drawerZoom = 1; // Default value for zoom.
 
     /**
      * Constucts new Factorymanager
@@ -159,7 +161,7 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                     canvas.addBlock(frb);
                     workspace.notifyListeners(new WorkspaceEvent(workspace, this, frb.getBlockID(), WorkspaceEvent.BLOCK_ADDED));
                 }
-                canvas.layoutBlocks();
+                canvas.layoutBlocks(drawerZoom);
                 this.subsetCanvases.add(canvas);
             }
             this.navigator.setCanvas(this.subsetCanvases, SUBSETS_NAME);
@@ -209,7 +211,7 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
     /////////////////////
     public void componentResized(ComponentEvent e) {
         this.relayoutFactory();
-        //this.relayoutBlocks();
+        this.relayoutBlocks();
     }
 
     public void componentHidden(ComponentEvent e) {
@@ -227,16 +229,25 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
     private void relayoutFactory() {
         this.navigator.reformView();
     }
+    
+    public void changeZoom(double multiplier)
+    {
+        drawerZoom = multiplier;
+        this.relayoutFactory();
+    }
 
     /**
      * Relayout all the drawers
      */
     public void relayoutBlocks() {
+        
         for (FactoryCanvas canvas : this.staticCanvases) {
-            canvas.layoutBlocks();
+            canvas.resizeZ(drawerZoom);
+            canvas.layoutBlocks(drawerZoom);
         }
         for (FactoryCanvas canvas : this.dynamicCanvases) {
-            canvas.layoutBlocks();
+            canvas.resizeZ(drawerZoom);
+            canvas.layoutBlocks(drawerZoom);
         }
     }
 
@@ -617,9 +628,10 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                     printError("Attempting to add a null instance of block");
                     return;
                 } else {
+                    block.setZoomLevel(drawerZoom);
                     canvas.addBlock(block);
                     workspace.notifyListeners(new WorkspaceEvent(workspace, this, block.getBlockID(), WorkspaceEvent.BLOCK_ADDED));
-                    canvas.layoutBlocks();
+                    canvas.layoutBlocks(drawerZoom);
                     return;
                 }
             }
@@ -635,9 +647,10 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                     printError("Attempting to add a null instance of block");
                     return;
                 } else {
+                    block.setZoomLevel(drawerZoom);
                     canvas.addBlock(block);
                     workspace.notifyListeners(new WorkspaceEvent(workspace, this, block.getBlockID(), WorkspaceEvent.BLOCK_ADDED));
-                    canvas.layoutBlocks();
+                    canvas.layoutBlocks(drawerZoom);
                     return;
                 }
             }
@@ -662,11 +675,12 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                     if (block == null || Block.NULL.equals(block.getBlockID())) {
                         continue;
                     }
+                    block.setZoomLevel(drawerZoom);
                     canvas.addBlock(block);
                     workspace.notifyListeners(new WorkspaceEvent(workspace, this, block.getBlockID(), WorkspaceEvent.BLOCK_ADDED));
 
                 }
-                canvas.layoutBlocks();
+                canvas.layoutBlocks(drawerZoom);
                 return;
             }
         }
@@ -682,11 +696,12 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                     if (block == null || Block.NULL.equals(block.getBlockID())) {
                         continue;
                     }
+                    block.setZoomLevel(drawerZoom);
                     canvas.addBlock(block);
                     workspace.notifyListeners(new WorkspaceEvent(workspace, this, block.getBlockID(), WorkspaceEvent.BLOCK_ADDED));
 
                 }
-                canvas.layoutBlocks();
+                canvas.layoutBlocks(drawerZoom);
                 return;
             }
         }
@@ -708,11 +723,12 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                     if (block == null || Block.NULL.equals(block.getBlockID())) {
                         continue;
                     }
+                    block.setZoomLevel(drawerZoom);
                     canvas.addBlock(block);
                     workspace.notifyListeners(new WorkspaceEvent(workspace, this, block.getBlockID(), WorkspaceEvent.BLOCK_ADDED));
 
                 }
-                canvas.layoutBlocks();
+                canvas.layoutBlocks(drawerZoom);
                 return;
             }
         }
@@ -733,7 +749,7 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                 canvas.removeBlock(block);
                 //DO NOT THROW AN EVENT FOR REMOVING DRAWER BLOCKS!!!
                 //Workspace.getInstance().notifyListeners(new WorkspaceEvent(FactoryManager.this, block.getBlockID(), WorkspaceEvent.BLOCK_REMOVED));
-                canvas.layoutBlocks();
+                canvas.layoutBlocks(drawerZoom);
                 return;
             }
         }
@@ -748,7 +764,7 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
                 canvas.removeBlock(block);
                 //DO NOT THROW AN EVENT FOR REMOVING DRAWER BLOCKS!!!
                 //Workspace.getInstance().notifyListeners(new WorkspaceEvent(FactoryManager.this, block.getBlockID(), WorkspaceEvent.BLOCK_REMOVED));
-                canvas.layoutBlocks();
+                canvas.layoutBlocks(drawerZoom);
                 return;
             }
         }
@@ -825,6 +841,7 @@ public class FactoryManager implements WorkspaceWidget, ComponentListener, Works
         //THIS ENTIRE METHOD IS A HACK!
         //PLEASE CHANGE WITH CAUTION
         //IT DOES SOME PREETY STRANGE THINGS
+        
         if (event.getEventType() == WorkspaceEvent.BLOCK_ADDED) {
             if (event.getSourceWidget() instanceof Page) {
                 Page page = (Page) event.getSourceWidget();

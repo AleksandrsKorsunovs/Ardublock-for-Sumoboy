@@ -157,8 +157,8 @@ public class Workspace extends JLayeredPane implements ISupportMemento, RBParent
 
         blockCanvasLayer = new JSplitPane(JSplitPane.HORIZONTAL_SPLIT, true,
                 factory.getJComponent(), blockCanvas.getJComponent());
-        blockCanvasLayer.setOneTouchExpandable(true);
-        blockCanvasLayer.setDividerSize(6);
+        blockCanvasLayer.setOneTouchExpandable(false);
+        blockCanvasLayer.setDividerSize(5);
         add(blockCanvasLayer, BLOCK_LAYER);
         validate();
         addPageAt(Page.getBlankPage(this), 0, false);
@@ -527,6 +527,10 @@ public class Workspace extends JLayeredPane implements ISupportMemento, RBParent
      * @param newZoom the desired zoom level
      */
     public void setWorkspaceZoom(double newZoom) {
+        factory.changeZoom(newZoom);
+        factory.getNavigator().resizeView(newZoom);
+        //blockCanvasLayer.setDividerLocation((newZoom-1)*0.4);
+        factory.relayoutBlocks();
         double oldZoom = this.zoom;
         int cDX = 0, cDY = 0;
 
@@ -536,9 +540,9 @@ public class Workspace extends JLayeredPane implements ISupportMemento, RBParent
         for (RenderableBlock block : getRenderableBlocks()) {
             block.setZoomLevel(newZoom);
         }
-        for (RenderableBlock block : getFactoryManager().getBlocks()) {
-            block.setZoomLevel(newZoom);
-        }
+        //for (RenderableBlock block : getFactoryManager().getBlocks()) {
+        //    block.setZoomLevel(newZoom);
+        //}
         for (Page p : getBlockCanvas().getPages()) {
             for (RenderableBlock block : p.getTopLevelBlocks()) {
 

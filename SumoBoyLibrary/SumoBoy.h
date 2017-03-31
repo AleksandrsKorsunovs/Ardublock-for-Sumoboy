@@ -2,6 +2,8 @@
 #define SUMOBOY_H_
 
 #include "Arduino.h"
+#include "GOFi2cOLED.h"
+#include <Wire.h>
 
 class SumoBoyMotor 
 {
@@ -71,5 +73,5 @@ public:
 	SumoBoy();
 	void init();
 };
-
+extern GOFi2cOLED display;
 #endif

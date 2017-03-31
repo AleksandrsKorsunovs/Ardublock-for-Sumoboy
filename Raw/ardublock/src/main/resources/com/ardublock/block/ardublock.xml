@@ -11070,10 +11070,130 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
                             <BlockConnector connector-type="number" connector-kind="plug"></BlockConnector>
 			</BlockConnectors>
 		</BlockGenus>
-                                       
+                <BlockGenus name="sb-print-text" kind="command" color="10 57 89" 
+                           initlabel="bg.sb-print-text" editable-label="no">			
+			<description>
+                            <text>Draws text on screen</text>
+                            <arg-description n="1">
+                               String to draw
+                            </arg-description>
+			</description>
+			<BlockConnectors>
+                            <BlockConnector connector-type="string" connector-kind="socket" label="bc.sb-print-text-text">
+					<DefaultArg genus-name="message" label="text"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-println-text" kind="command" color="10 57 89" 
+                           initlabel="bg.sb-println-text" editable-label="no">			
+			<description>
+                            <text>Draws text on screen and ends Line</text>
+                            <arg-description n="1">
+                               String to draw
+                            </arg-description>
+			</description>
+			<BlockConnectors>
+                            <BlockConnector connector-type="string" connector-kind="socket" label="bc.sb-print-text-text">
+					<DefaultArg genus-name="message" label="text"/>
+				</BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-set-cursor-px" kind="command" color="10 57 89" 
+                           initlabel="bg.sb-set-cursor-px" editable-label="no">			
+			<description>
+                            <text>Changesh Cursor Location</text>
+                            <arg-description n="1">
+                               Location X:0-128
+                            </arg-description>
+                            <arg-description n="2">
+                               Location Y:0-64
+                            </arg-description>
+			</description>
+			<BlockConnectors>
+                            <BlockConnector connector-type="number" connector-kind="socket" label="bc.sb-set-cursor-x">
+					<DefaultArg genus-name="number" label="0"/>
+                            </BlockConnector>
+                            <BlockConnector connector-type="number" connector-kind="socket" label="bc.sb-set-cursor-y">
+					<DefaultArg genus-name="number" label="0"/>
+                            </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-set-cursor-char" kind="command" color="10 57 89" 
+                           initlabel="bg.sb-set-cursor-char" editable-label="no">			
+			<description>
+                            <text>Changesh Cursor Location in chars</text>
+                            <arg-description n="1">
+                               Location X:0-16
+                            </arg-description>
+                            <arg-description n="2">
+                               Location Y:0-8
+                            </arg-description>
+			</description>
+			<BlockConnectors>
+                            <BlockConnector connector-type="number" connector-kind="socket" label="bc.sb-set-cursor-x">
+					<DefaultArg genus-name="number" label="0"/>
+                            </BlockConnector>
+                            <BlockConnector connector-type="number" connector-kind="socket" label="bc.sb-set-cursor-y">
+					<DefaultArg genus-name="number" label="0"/>
+                            </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-clear-display" kind="command" color="10 57 89" 
+                           initlabel="bg.sb-clear-display" editable-label="no">			
+			<description>
+                            <text>Clears Display</text>
+			</description>
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-display-display" kind="command" color="10 57 89" 
+                           initlabel="bg.sb-display-display" editable-label="no">			
+			<description>
+                            <text>Outputs buffer to screen</text>
+			</description>
+			<BlockConnectors>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-to-string" kind="data" color="10 57 89" 
+                           initlabel="bg.sb-to-string" editable-label="no">			
+			<description>
+			</description>
+			<BlockConnectors>
+                             <BlockConnector connector-type="string" connector-kind="plug"></BlockConnector>
+                            <BlockConnector connector-type="poly" connector-kind="socket" label="bc.sb-print-text-text">
+                            </BlockConnector>
+			</BlockConnectors>
+		</BlockGenus>
+                <BlockGenus name="sb-string-sum" kind="function" initlabel="bg.sb-string-sum" color="10 57 89">
+			<description>
+				<text>
+					String concetianation (
+					<arg n="1" />
+					Str + Str
+					<arg n="2" />
+					).
+				</text>
+			</description>
+			<BlockConnectors>
+				<BlockConnector label="" connector-kind="plug" connector-type="string" position-type="mirror" >
+					<!-- CLUDGE:: This apparently daft line enables 'clone' to work correctly on this BlockGenus -->
+					<DefaultArg genus-name="dummy" label="" />
+				</BlockConnector>
+				<BlockConnector label="" connector-kind="socket" connector-type="poly" position-type="bottom" />
+				<BlockConnector label="" connector-kind="socket" connector-type="poly" position-type="bottom" />
+			</BlockConnectors>
+		</BlockGenus>                                       
 	</BlockGenuses>
 
 	<BlockFamilies>
+                <BlockFamily>
+                        <FamilyMember>sb-print-text</FamilyMember>
+                        <FamilyMember>sb-println-text</FamilyMember>
+                </BlockFamily>
+                <BlockFamily>
+                        <FamilyMember>sb-set-cursor-px</FamilyMember>
+                        <FamilyMember>sb-set-cursor-char</FamilyMember>
+                </BlockFamily>
                 <BlockFamily>
 			<FamilyMember>sb-drive-forward</FamilyMember>
                         <FamilyMember>sb-drive-left</FamilyMember>
@@ -11656,7 +11776,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 	</BlockFamilies>
 
 	<BlockDrawerSets>
-		<BlockDrawerSet name="factory" type="stack" location="southwest" window-per-drawer="no" drawer-draggable="no">
+		<BlockDrawerSet name="factory" type="stack" location="east" window-per-drawer="no" drawer-draggable="no">
 			<BlockDrawer name="bd.control" type="factory" is-open="yes" button-color="255 255 0">
 				<BlockGenusMember>loop</BlockGenusMember>
 				<BlockGenusMember>program</BlockGenusMember>
@@ -11682,7 +11802,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>pin-read-analog</BlockGenusMember>
 				<BlockGenusMember>pin-write-digital</BlockGenusMember>
 				<BlockGenusMember>pin-write-analog</BlockGenusMember>
-				<BlockGenusMember>pin-toggle</BlockGenusMember>
+				<!--<BlockGenusMember>pin-toggle</BlockGenusMember>
 				<BlockGenusMember>df_servo</BlockGenusMember>
 				<BlockGenusMember>df_360_degree_rotation_motor</BlockGenusMember>
 				<BlockGenusMember>ultrasonic</BlockGenusMember>
@@ -11694,7 +11814,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>DDRA</BlockGenusMember>
 				<BlockGenusMember>PORTA</BlockGenusMember>
 				<BlockGenusMember>PORT_FIX</BlockGenusMember>
-				<BlockGenusMember>PINA</BlockGenusMember>
+				<BlockGenusMember>PINA</BlockGenusMember>-->
 			</BlockDrawer>
 			<BlockDrawer button-color="255 163 82" name="bd.logic" type="factory">
 				<BlockGenusMember>greater</BlockGenusMember>
@@ -11758,7 +11878,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>variable_vector</BlockGenusMember>
 				<BlockGenusMember>setter_variable_vector</BlockGenusMember>
 			</BlockDrawer>
-			<BlockDrawer button-color="205 133 63" name="bd.utilities" type="factory">
+			<!--<BlockDrawer button-color="205 133 63" name="bd.utilities" type="factory">
 				<BlockGenusMember>servo_default</BlockGenusMember>
 				<BlockGenusMember>ultrasonic</BlockGenusMember>
 				<BlockGenusMember>LCD_I2C_Sainsmart_20by4</BlockGenusMember>
@@ -11767,7 +11887,7 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>number-single-I2C-address</BlockGenusMember>
 				<BlockGenusMember>number-single-fixed-parallel</BlockGenusMember>
 			</BlockDrawer>
-                        <!--
+                        
 			<BlockDrawer button-color="255 255 255" name="bd.communication" type="factory">
 				<BlockGenusMember>serial_available</BlockGenusMember>
 				<BlockGenusMember>serial_available2</BlockGenusMember>
@@ -12223,28 +12343,36 @@ the validity of a default argument when the BlockGenuses are first loaded. -->
 				<BlockGenusMember>xcj_ms_digital_write</BlockGenusMember>
 			</BlockDrawer>-->
                         
-                        <BlockDrawer button-color="10 57 89" name="bd.sb-sumo-boy">
-                                <BlockGenusMember>sb-sharp-read</BlockGenusMember>
-                                <BlockGenusMember>sb-sharp-read-all</BlockGenusMember>
-                                <BlockGenusMember>sb-sharp-read-front</BlockGenusMember>
+                        <BlockDrawer button-color="10 57 89" name="bd.sb-sumo-boy" type="factory">               
                                 <BlockGenusMember>sb-drive-forward</BlockGenusMember>
                                 <BlockGenusMember>sb-drive-left</BlockGenusMember>
                                 <BlockGenusMember>sb-drive-right</BlockGenusMember>
                                 <BlockGenusMember>sb-drive-back</BlockGenusMember>
-                                <BlockGenusMember>sb-motor-set</BlockGenusMember>
-                                <BlockGenusMember>sb-motor-set-notxt</BlockGenusMember>
-                                <BlockGenusMember>sb-motor-set-txt</BlockGenusMember>
+                                <BlockGenusMember>sb-motor-set</BlockGenusMember>    
+                                <BlockGenusMember>sb-sharp-read</BlockGenusMember>
+                                <BlockGenusMember>sb-sharp-read-all</BlockGenusMember>                              
                                 <BlockGenusMember>sb-line-sensor-read-analog</BlockGenusMember>
                                 <BlockGenusMember>sb-line-sensor-read-boolean</BlockGenusMember>
+                                <BlockGenusMember>sb-line-sensors-value</BlockGenusMember>
+                                <BlockGenusMember>sb-switch-read-all</BlockGenusMember>
+                                <BlockGenusMember>sb-switch-read-one</BlockGenusMember>
                                 <BlockGenusMember>sb-led-set</BlockGenusMember>
                                 <BlockGenusMember>sb-button-read</BlockGenusMember>
                                 <BlockGenusMember>sb-repeat-millis</BlockGenusMember>
-                                <BlockGenusMember>sb-switch-read-all</BlockGenusMember>
-                                <BlockGenusMember>sb-switch-read-one</BlockGenusMember>
                                 <BlockGenusMember>sb-switch-block</BlockGenusMember>
                                 <BlockGenusMember>sb-case-block</BlockGenusMember>
                                 <BlockGenusMember>sb-ir-loop</BlockGenusMember>
-                                <BlockGenusMember>sb-line-sensors-value</BlockGenusMember>
+                                <BlockGenusMember>sb-print-text</BlockGenusMember>
+                                <BlockGenusMember>sb-set-cursor-char</BlockGenusMember>
+                                <BlockGenusMember>sb-clear-display</BlockGenusMember>
+                                <BlockGenusMember>sb-display-display</BlockGenusMember>
+                                <BlockGenusMember>sb-to-string</BlockGenusMember>
+                                <!--<BlockGenusMember>sb-sharp-read-front</BlockGenusMember>-->
+                                 <!--<BlockGenusMember>sb-set-cursor-px</BlockGenusMember>-->
+                                <!-- <BlockGenusMember>sb-motor-set-notxt</BlockGenusMember>
+                                <BlockGenusMember>sb-motor-set-txt</BlockGenusMember>-->
+                                <!--<BlockGenusMember>sb-string-sum</BlockGenusMember>-->
+
                         </BlockDrawer>        
 
 

@@ -22,6 +22,7 @@ import javax.swing.JPanel;
 import javax.swing.Timer;
 
 import edu.mit.blocks.workspace.Workspace;
+import javax.swing.JSplitPane;
 
 /**
  * See documentation for Explorer.
@@ -56,7 +57,8 @@ public class GlassExplorer extends JPanel implements Explorer, FocusListener {
     private List<ExplorerListener> listeners;
     /** The workspace in use */
     private final Workspace workspace;
-
+    private Object screenSize;
+    private JSplitPane splitPane;
     /**
      * Constructor
      */
@@ -66,21 +68,26 @@ public class GlassExplorer extends JPanel implements Explorer, FocusListener {
         this.selectedCanvasIndex = DEFAULT_INDEX;
         this.drawers = new ArrayList<GlassCard>();
         this.setOpaque(true);
-        this.setBackground(Color.GRAY);
+        this.setBackground(Color.blue);
         this.timer = new EnlargerTimer();
         this.listeners = new ArrayList<ExplorerListener>();
         retardedPane = new JPanel();
-        retardedPane.setBackground(Color.GRAY);
+        retardedPane.setBackground(Color.gray);
         buttonPane = new JPanel();
-        buttonPane.setBackground(Color.GRAY);
+        buttonPane.setBackground(Color.gray);
         buttonPane.setLayout(new GridLayout(0, 1));
         canvasPane = new CanvasPane();
         canvasPane.setOpaque(false);
-        canvasPane.setBackground(Color.GRAY);
+        canvasPane.setBackground(Color.yellow);
         workspace.add(canvasPane, Workspace.WIDGET_LAYER);
         workspace.revalidate();
-        this.add(buttonPane, BorderLayout.CENTER);
-        this.add(retardedPane, BorderLayout.SOUTH);
+        splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT,
+                          buttonPane, retardedPane);
+        splitPane.setOneTouchExpandable(false);
+        splitPane.setDividerSize(5);
+        //this.add(buttonPane, BorderLayout.CENTER);
+        //this.add(retardedPane, BorderLayout.SOUTH);
+        this.add(splitPane);
         this.revalidate();
         this.addFocusListener(this);
     }
@@ -169,9 +176,19 @@ public class GlassExplorer extends JPanel implements Explorer, FocusListener {
         if (this.getHeight() < this.drawers.size() * 25) {
             retardedPane.setPreferredSize(new Dimension(0, 0));
         } else {
-            retardedPane.setPreferredSize(new Dimension(0, this.getHeight() - this.drawers.size() * 25));
+            retardedPane.setPreferredSize(new Dimension(0, this.getHeight() - this.drawers.size() * (int)(25*2)));
         }
     }
+    
+    public void resizeView(double multiplier)
+    {
+       canvasPane.setSize((int) (100*multiplier),canvasHeight);
+       canvasPane.setFinalWidth((int) (100*multiplier));
+       canvasPane.revalidate();
+       canvasPane.repaint();
+       // canvasPane.paint
+    }
+     
 
     /**
      * @return a JComponent representation of this explorer
@@ -224,7 +241,6 @@ public class GlassExplorer extends JPanel implements Explorer, FocusListener {
                 super.add(extraPanel);
             }
         }
-
         /**
          * The CanvasPane keeps track of the width it would like to
          * be when opened fully.  This method returns that value.
@@ -232,6 +248,11 @@ public class GlassExplorer extends JPanel implements Explorer, FocusListener {
          */
         public int getFinalWidth() {
             return finalWidth;
+        }
+        
+        public void setFinalWidth(int w)
+        {
+            this.finalWidth = w;
         }
 
         public void paint(Graphics g) {

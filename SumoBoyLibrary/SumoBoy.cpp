@@ -1,25 +1,26 @@
 #include "SumoBoy.h"
+#include "GOFi2cOLED.h"
 #include "Arduino.h"
 
-#define LEFTSPEEDMOTORPIN 3
+#define LEFTSPEEDMOTORPIN 5
 #define RIGHTSPEEDMOTORPIN 9
-#define LEFTDIRMOTORPIN 4
+#define LEFTDIRMOTORPIN 11
 #define RIGHTDIRMOTORPIN 10
-#define SHARP0PIN A5
-#define SHARP1PIN A3
-#define SHARP2PIN 7
-#define SHARP3PIN A8
-#define SHARP4PIN A7
-#define LEFTLINESENSPIN A2
-#define RIGHTLINESENSPIN A1
-#define BACKLINESENSPIN A4
+#define SHARP0PIN A0
+#define SHARP1PIN A1
+#define SHARP2PIN 4
+//#define SHARP3PIN 2
+//#define SHARP4PIN 3
+#define LEFTLINESENSPIN A4
+#define RIGHTLINESENSPIN A3
+#define BACKLINESENSPIN A5
 #define LEDAPIN 13
-#define LED1PIN 5
-#define LED2PIN 11
-#define LED3PIN 2
-#define DIP3PIN 17
-#define DIP0PIN 15
-#define DIP1PIN 14
+#define LED1PIN 12
+#define LED2PIN 6
+#define LED3PIN 17
+#define DIP3PIN 14
+#define DIP0PIN 7
+#define DIP1PIN 15
 #define DIP2PIN 16
 
 SumoBoySwitch::SumoBoySwitch()
@@ -46,10 +47,10 @@ bool SumoBoySwitch::read(int type)
 {
 	switch (type)
 	{
-	case 0: value[0] = digitalRead(DIP0PIN); break;
-	case 1: value[1] = digitalRead(DIP1PIN); break;
-	case 2: value[2] = digitalRead(DIP2PIN); break;
-	case 3: value[3] = digitalRead(DIP3PIN); break;
+	case 0: value[0] = !digitalRead(DIP0PIN); break;
+	case 1: value[1] = !digitalRead(DIP1PIN); break;
+	case 2: value[2] = !digitalRead(DIP2PIN); break;
+	case 3: value[3] = !digitalRead(DIP3PIN); break;
 	default:break;
 	}
 	return value[type];
@@ -202,8 +203,8 @@ void SumoBoySharp::init()
 	pinMode(SHARP0PIN, INPUT);
 	pinMode(SHARP1PIN, INPUT);
 	pinMode(SHARP2PIN, INPUT);
-	pinMode(SHARP3PIN, INPUT);
-	pinMode(SHARP4PIN, INPUT);
+	//pinMode(SHARP3PIN, INPUT);
+	//pinMode(SHARP4PIN, INPUT);
 }
 
 bool SumoBoySharp::read(int type)
@@ -213,11 +214,11 @@ bool SumoBoySharp::read(int type)
 		case 0: value[0] = digitalRead(SHARP0PIN); break;
 		case 1: value[1] = digitalRead(SHARP1PIN); break;
 		case 2: value[2] = digitalRead(SHARP2PIN); break;
-		case 3: value[3] = digitalRead(SHARP3PIN); break;
-		case 4: value[4] = digitalRead(SHARP4PIN); break;
+		//case 3: value[3] = digitalRead(SHARP3PIN); break;
+		//case 4: value[4] = digitalRead(SHARP4PIN); break;
 		default:break;
 	}
-	return !value[type - 1];
+	return !value[type];
 }
 
 int SumoBoySharp::readAllVal()
@@ -227,8 +228,8 @@ int SumoBoySharp::readAllVal()
 	if (!digitalRead(SHARP0PIN))ret += 8;
 	if( !digitalRead(SHARP1PIN))ret += 16;
 	if (!digitalRead(SHARP2PIN))ret += 32;
-	if (!digitalRead(SHARP3PIN))ret += 64;
-	if (!digitalRead(SHARP4PIN))ret += 128;
+	//if (!digitalRead(SHARP3PIN))ret += 64;
+	//if (!digitalRead(SHARP4PIN))ret += 128;
 
 	return ret;
 }
@@ -247,3 +248,4 @@ void SumoBoy::init()
 	led.init();
 	switches.init();
 }
+GOFi2cOLED display;
