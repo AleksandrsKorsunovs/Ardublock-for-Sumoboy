@@ -168,26 +168,26 @@ public class OpenblocksFrame extends JFrame
 		buttons.add(serialMonitorButton);
 
 		JPanel bottomPanel = new JPanel();
-		JButton websiteButton = new JButton(uiMessageBundle.getString("ardublock.ui.website"));
-		websiteButton.addActionListener(new ActionListener () {
-			public void actionPerformed(ActionEvent e) {
-			    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
-			    URL url;
-			    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
-			        try {
-						url = new URL("http://ardublock.com");
-			            desktop.browse(url.toURI());
-			        } catch (Exception e1) {
-			            e1.printStackTrace();
-			        }
-			    }
-			}
-		});
-		JLabel versionLabel = new JLabel("v " + uiMessageBundle.getString("ardublock.ui.version"));
-		
+//		JButton websiteButton = new JButton(uiMessageBundle.getString("ardublock.ui.website"));
+//		websiteButton.addActionListener(new ActionListener () {
+//			public void actionPerformed(ActionEvent e) {
+//			    Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop() : null;
+//			    URL url;
+//			    if (desktop != null && desktop.isSupported(Desktop.Action.BROWSE)) {
+//			        try {
+//						url = new URL("http://ardublock.com");
+//			            desktop.browse(url.toURI());
+//			        } catch (Exception e1) {
+//			            e1.printStackTrace();
+//			        }
+//			    }
+//			}
+//		});
+//		JLabel versionLabel = new JLabel("v " + uiMessageBundle.getString("ardublock.ui.version"));
+//		
 		bottomPanel.add(saveImageButton);
-		bottomPanel.add(websiteButton);
-		bottomPanel.add(versionLabel);
+		//bottomPanel.add(websiteButton);
+		//bottomPanel.add(versionLabel);
 
                 ZoomSlider zslider = new ZoomSlider(workspace);
                 zslider.reset();
